@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-actuarialangle
 Version:	20121016
-Release:	1
+Release:	2
 Summary:	Symbol for use in "present value" statements of an annuity
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/actuarialangle
