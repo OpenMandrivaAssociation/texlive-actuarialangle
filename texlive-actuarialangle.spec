@@ -1,12 +1,6 @@
-# revision 28004
-# category Package
-# catalog-ctan /macros/latex/contrib/actuarialangle
-# catalog-date 2012-10-16 11:23:03 +0200
-# catalog-license pd
-# catalog-version undef
 Name:		texlive-actuarialangle
-Version:	20121016
-Release:	10
+Version:	2.0
+Release:	1
 Summary:	Symbol for use in "present value" statements of an annuity
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/actuarialangle
@@ -33,8 +27,8 @@ actuarial and financial notation.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/actuarialangle/actuarialangle.sty
-%doc %{_texmfdistdir}/doc/latex/actuarialangle/README
+%{_texmfdistdir}/tex/latex/actuarialangle
+%doc %{_texmfdistdir}/doc/latex/actuarialangle
 
 #-----------------------------------------------------------------------
 %prep
