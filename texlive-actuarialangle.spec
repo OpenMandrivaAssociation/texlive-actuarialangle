@@ -1,12 +1,12 @@
 Name:		texlive-actuarialangle
-Version:	2.0
-Release:	2
+Version:	51376
+Release:	1
 Summary:	Symbol for use in "present value" statements of an annuity
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/actuarialangle
 License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/actuarialangle.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/actuarialangle.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/actuarialangle.r51376.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/actuarialangle.doc.r51376.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -18,12 +18,12 @@ The package defines a single command \actuarialangle to typeset
 actuarial and financial notation.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -32,7 +32,7 @@ actuarial and financial notation.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
