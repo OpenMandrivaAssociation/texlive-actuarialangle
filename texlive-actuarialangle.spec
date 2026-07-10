@@ -1,41 +1,26 @@
-Name:		texlive-actuarialangle
-Version:	67201
-Release:	1
-Summary:	Symbol for use in "present value" statements of an annuity
+%global tl_name actuarialangle
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.1
+Release:	%{tl_revision}.1
+Summary:	Angle symbol denoting a duration in actuarial and financial notation
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/actuarialangle
-License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/actuarialangle.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/actuarialangle.doc.r%{version}.tar.xz
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/actuarialangle.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/actuarialangle.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/actuarialangle.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package defines a single command \actuarialangle to typeset
-"angles" in the 'present value of an annuity' symbols common in
-actuarial and financial notation.
+This package provides commands to typeset the "angle" symbol denoting a
+duration in actuarial notation, such as in symbols for the present value
+of certain or life annuities, and an over angle square bracket used to
+emphasize joint status in symbols of life contingencies.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/actuarialangle
-%doc %{_texmfdistdir}/doc/latex/actuarialangle
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
